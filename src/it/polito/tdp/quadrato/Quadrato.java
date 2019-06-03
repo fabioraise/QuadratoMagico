@@ -11,9 +11,9 @@ public class Quadrato {
 	
 	public Quadrato(int size) {
 		this.setSize(size) ;
-		mappa = new ArrayList<Integer>() ;
+		mappa = new ArrayList<Integer>() ; // mappa dei valori del quadrato
 		size2 = size * size ;
-		sommaMagica = ( (size2*(size2+1))/2 ) / size ;
+		sommaMagica = ( (size2*(size2+1))/2 ) / size ; // Valore della somma delle righe, colonne, diagonali
 	}
 
 	public int getSize() {
@@ -66,14 +66,14 @@ public class Quadrato {
 				return false ;
 		}
 		
-		// controlla D1 \
+		// controlla diagonale 1 \
 		int somma = 0 ;
 		for(int riga=0; riga<size; riga++)
 			somma+=get(riga, riga) ;
 		if (somma!=sommaMagica)
 			return false ;
 
-		// controlla D2 /
+		// controlla diagonale 2 /
 		somma = 0 ;
 		for(int riga=0; riga<size; riga++)
 			somma+=get(riga, size-riga-1) ;
